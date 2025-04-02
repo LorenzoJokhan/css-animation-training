@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #333;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background: #09161d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Raleway", Arial;
+      }
+
+      .card {
+        position: relative;
+        width: 320px;
+        height: 420px;
+        background: #122936;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        width: 100%;
+        height: 100%;
+        background: #219bf3;
+        transform: skewY(-15deg);
+        transition: 0.5s;
+      }
+
+      .card:hover::before {
+        top: -70%;
+        transform: skewY(30deg);
+      }
+
+      .imgBox {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+        z-index: 1;
+      }
+
+      img {
+        max-width: 100%;
+        transition: 0.5s;
+      }
+
+      .card:hover img {
+        max-width: 50%;
+      }
+
+      .contentBox {
+        position: relative;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1;
+      }
+
+      h3 {
+        font-size: 18px;
+        color: white;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .price {
+        font-size: 24px;
+        color: white;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .buy {
+        position: relative;
+        padding: 10px 30px;
+        margin-top: 15px;
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        background: #219bf3;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: 0.5s;
+        opacity: 0;
+        top: 200px;
+      }
+
+      .card:hover .buy {
+        opacity: 1;
+        top: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="imgBox">
+        <img src="../assets/ProductCard002/headphone1.png" />
+      </div>
+      <div class="contentBox">
+        <h3>Wireless headphones</h3>
+        <h2 class="price">$60.<small>99</small></h2>
+        <a class="buy" href="#">Buy now</a>
+      </div>
+    </div>
+  </body>
+</html>

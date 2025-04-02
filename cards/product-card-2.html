@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #131313;
+        overflow: hidden;
+        font-family: "Raleway", Arial;
+      }
+
+      .container {
+        position: relative;
+      }
+
+      .card {
+        position: relative;
+        width: 320px;
+        height: 450px;
+        background: #232323;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #9bdc22;
+        clip-path: circle(150px at 80% 20%);
+        transition: 0.5s ease-in-out;
+      }
+
+      .card::after {
+        content: "Nike";
+        position: absolute;
+        top: 30%;
+        left: -20%;
+        font-size: 12em;
+        color: #ffffff05;
+        font-style: italic;
+        font-weight: 800;
+        z-index: 1;
+      }
+
+      .card:hover::before {
+        clip-path: circle(300px at 80% -20%);
+      }
+
+      .card .imgBox {
+        position: absolute;
+        width: 100%;
+        height: 220px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        transition: 0.5s;
+      }
+
+      .imgBox img {
+        width: 270px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-25deg);
+      }
+
+      .card:hover .imgBox {
+        top: 0;
+        transform: translateY(0);
+      }
+
+      .contentBox {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        z-index: 5;
+        transition: 1s;
+      }
+
+      .card:hover .contentBox {
+        height: 210px;
+      }
+
+      .contentBox h2 {
+        position: relative;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: white;
+      }
+
+      .contentBox .size,
+      .color {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 20px;
+        opacity: 0;
+        transition: 0.5s;
+      }
+
+      .card:hover .size {
+        opacity: 1;
+        transition-delay: 0.5s;
+      }
+
+      .card:hover .color {
+        opacity: 1;
+        transition-delay: 0.6s;
+      }
+
+      .size h3,
+      .color h3 {
+        color: white;
+        font-weight: 300;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-right: 10px;
+      }
+
+      .size span {
+        width: 26px;
+        height: 26px;
+        line-height: 24px;
+        font-size: 14px;
+        color: #111;
+        background: white;
+        border-radius: 4px;
+        margin: 0 5px;
+        transition: 0.5s;
+        cursor: pointer;
+      }
+
+      .color span {
+        width: 20px;
+        height: 20px;
+        line-height: 24px;
+        background: red;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+
+      .size span:hover {
+        color: #111;
+        background: #9bdc22;
+      }
+
+      .color span:nth-child(2) {
+        background: #9bdc22;
+      }
+      .color span:nth-child(3) {
+        background: #03a9f4;
+      }
+      .color span:nth-child(4) {
+        background: #e91e63;
+      }
+
+      .contentBox a {
+        display: inline-block;
+        padding: 10px 30px;
+        background: white;
+        border-radius: 4px;
+        margin-top: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        color: #111;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: 0.5s;
+      }
+
+      .card:hover .contentBox a {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.75s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="imgBox">
+          <img
+            src="../assets/crative css product card effect 2/ProductCARDUIDesign/shoes.png"
+          />
+        </div>
+        <div class="contentBox">
+          <h2>Nike shoes</h2>
+          <div class="size">
+            <h3>Size</h3>
+            <span>7</span>
+            <span>8</span>
+            <span>9</span>
+            <span>10</span>
+          </div>
+          <div class="color">
+            <h3>Color:</h3>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <a href="#">Buy now</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .btn {
+        border: 2px solid tomato;
+        background: none;
+        color: tomato;
+        padding: 20px 40px;
+        font-size: 25px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.5s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn:hover {
+        color: white;
+      }
+
+      .btn:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 0%;
+        width: 100%;
+        background: tomato;
+        z-index: -1;
+        border-radius: 0 0 50% 50%;
+        transition: all 0.5s;
+      }
+
+      .btn:hover::before {
+        height: 190%;
+      }
+
+      .btn2 {
+        border: 2px solid aquamarine;
+        background: none;
+        padding: 20px 40px;
+        color: aquamarine;
+        font-size: 25px;
+        text-transform: uppercase;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.5s;
+        overflow: hidden;
+      }
+
+      .btn2:hover {
+        color: white;
+      }
+
+      .btn2::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 0%;
+        background: aquamarine;
+        border-radius: 0 0 50% 50%;
+        transition: all 0.5s;
+        z-index: -1;
+      }
+
+      .btn2:hover::before {
+        height: 190%;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">Button</button>
+    <button class="btn2">Button</button>
+  </body>
+</html>

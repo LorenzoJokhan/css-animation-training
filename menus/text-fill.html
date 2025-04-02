@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #252839;
+      }
+
+      ul {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      li {
+        position: relative;
+        list-style: none;
+      }
+
+      a {
+        position: relative;
+        font-size: 4em;
+        text-decoration: none;
+        letter-spacing: 2px;
+        line-height: 1em;
+        text-transform: uppercase;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+      }
+
+      a:before {
+        content: attr(data-text);
+        position: absolute;
+        color: #00ade1;
+        border-right: 8px solid #00ade1;
+        -webkit-text-stroke: 1px #00ade1;
+        width: 0%;
+        overflow: hidden;
+        transition: 1s;
+      }
+
+      a:hover::before {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <a data-text="&nbsp;home">&nbsp;Home&nbsp;</a>
+      </li>
+      <li>
+        <a data-text="&nbsp;about">&nbsp;About&nbsp; </a>
+      </li>
+      <li>
+        <a data-text="&nbsp;services">&nbsp;Services&nbsp; </a>
+      </li>
+      <li>
+        <a data-text="&nbsp;team">&nbsp;Team&nbsp; </a>
+      </li>
+      <li>
+        <a data-text="&nbsp;contact">&nbsp;Contact&nbsp;</a>
+      </li>
+    </ul>
+  </body>
+</html>

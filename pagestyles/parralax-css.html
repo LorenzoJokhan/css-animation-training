@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallax Effect</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .parallax:nth-child(1) {
+        background-image: url("https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=1600");
+        height: 100vh;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .parallax:nth-child(3) {
+        background-image: url("https://images.unsplash.com/photo-1726137569888-ce43cc13e414?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        height: 100vh;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .content {
+        height: 100vh;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parallax"></div>
+    <div class="content">
+      <h1>Parallax Effect</h1>
+    </div>
+    <div class="parallax"></div>
+  </body>
+</html>
