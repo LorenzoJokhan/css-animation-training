@@ -1,3 +1,35 @@
+@font-face {
+  font-family: "DM Sans";
+  src: url("../assets/fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf")
+    format("truetype");
+  font-weight: 300 700;
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("../assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz\,wdth\,wght.ttf")
+    format("truetype");
+  font-weight: 700;
+}
+
+:root {
+  /* Neutral colors */
+  --neutral-0: hsl(0, 0%, 100%);
+  --neutral-200: hsl(250, 6%, 84%);
+  --neutral-300: hsl(240, 6%, 70%);
+  --neutral-600: hsl(243, 23%, 30%);
+  --neutral-700: hsl(243, 23%, 24%);
+  --neutral-800: hsl(243, 27%, 20%);
+  --neutral-900: hsl(243, 96%, 9%);
+
+  /* Orange */
+  --orange-500: hsl(28, 100%, 52%);
+
+  /* Blue */
+  --blue-500: hsl(233, 67%, 56%);
+  --blue-700: hsl(248, 70%, 36%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,9 +37,14 @@
 }
 
 body {
+  font-family: "DM Sans";
   padding: 1rem 4rem;
   background-color: #01012a;
   color: white;
+}
+
+.logo {
+  height: 2rem;
 }
 
 header {
@@ -23,6 +60,7 @@ header :nth-child(1) {
 .title {
   text-align: center;
   margin-bottom: 2rem;
+  font-weight: 700;
 }
 
 .search-menu {
@@ -38,8 +76,17 @@ input {
   padding: 1.5ch;
   color: white;
   border-radius: 5px;
-  background-color: transparent;
-  border: #4557db solid 1px;
+  background-color: var(--neutral-800);
+  border: var(--neutral-100) solid 1px;
+}
+
+select {
+  appearance: none;
+  padding: 0.5rem;
+  color: white;
+  background-color: var(--neutral-800);
+  border: 1px solid var(--neutral-600);
+  border-radius: 5px;
 }
 
 .search-button {
@@ -48,6 +95,7 @@ input {
   color: white;
   background-color: #4557db;
   border: #4557db solid 1px;
+  cursor: pointer;
 }
 
 .content-container {
@@ -57,6 +105,7 @@ input {
 }
 
 .left-side {
+  font-weight: 100;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -64,16 +113,41 @@ input {
 }
 
 .weather-result-banner {
-  min-height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 250px;
   padding: 1rem;
   background-color: #4557db;
-  border: 1px solid orange;
+  border: 1px solid var(--neutral-600);
   border-radius: 7.5px;
+  background-image: url("../assets/images/bg-today-large.svg");
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.weather-result-banner :nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.weather-result-banner :nth-child(2) {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.weather-result-banner :nth-child(2) img {
+  width: 6rem;
+}
+.weather-result-banner :nth-child(2) h1 {
+  font-size: 5rem;
+  font-style: italic;
 }
 
 .general-info-list {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
 
@@ -84,8 +158,47 @@ input {
 }
 
 .general-info-card {
-  border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   padding: 1rem;
+  background-color: var(--neutral-800);
+  border: 1px solid var(--neutral-600);
+  border-radius: 10px;
+}
+
+.daily-forecast-info-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--neutral-800);
+  border: 1px solid var(--neutral-600);
+  border-radius: 10px;
+}
+
+.daily-forecast-info-card :nth-child(1) {
+  font-weight: 500;
+}
+
+.daily-forecast-info-card img {
+  width: 3rem;
+}
+
+.daily-forecast-info-card section {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.general-info-card :nth-child(1) {
+  font-size: 14px;
+}
+
+.general-info-card :nth-child(2) {
+  font-size: 22px;
 }
 
 .daily-forecast-list-wrapper {
@@ -95,7 +208,8 @@ input {
 }
 
 .daily-forecast-list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
   gap: 1rem;
 }
 
@@ -103,10 +217,15 @@ input {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  border: 1px solid var(--neutral-600);
+  background-color: var(--neutral-800);
+  border-radius: 10px;
 }
 
 .hourly-forecast-list-menu {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 10px;
 }
 
@@ -117,7 +236,21 @@ input {
 }
 
 .hourly-forecast-list-item {
-  padding: 0.5ch;
-  border: 1px solid #4557db;
-  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px;
+  border: 1px solid var(--neutral-600);
+  border-radius: 10px;
+  background-color: var(--neutral-700);
+}
+
+.hourly-forecast-list-item div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hourly-forecast-list-item img {
+  width: 2rem;
 }
